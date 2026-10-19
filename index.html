@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal de Deputados Federais</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1>Deputados federais</h1>
+    <p id="fonte" class="fonte">Carregando informações da legislatura…</p>
+  </header>
+
+  <main>
+    <form id="filtros" class="filtros" role="search">
+      <label>Nome
+        <input type="search" id="busca" placeholder="Ex.: Maria" autocomplete="off">
+      </label>
+      <label>Partido
+        <select id="partido"><option value="">Todos</option></select>
+      </label>
+      <label>UF
+        <select id="uf"><option value="">Todas</option></select>
+      </label>
+      <button type="button" id="limpar">Limpar filtros</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+    <section id="lista" class="grade" aria-label="Resultados"></section>
+
+    <nav class="paginacao" aria-label="Paginação">
+      <button id="anterior">Anterior</button>
+      <span id="pagina-info"></span>
+      <button id="proxima">Próxima</button>
+    </nav>
+  </main>
+
+  <dialog id="detalhe" aria-labelledby="detalhe-titulo">
+    <button id="fechar" class="fechar" aria-label="Fechar">Fechar</button>
+    <div id="detalhe-conteudo"></div>
+  </dialog>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
